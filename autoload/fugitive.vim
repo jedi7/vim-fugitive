@@ -6794,6 +6794,7 @@ function! s:BlameSubcommand(line1, count, range, bang, mods, options) abort
   let commits = []
   let files = []
   let ranges = []
+  call insert(flags, '-w')
   if a:line1 > 0 && a:count > 0 && a:range != 1
     call extend(ranges, ['-L', a:line1 . ',' . a:count])
   endif
